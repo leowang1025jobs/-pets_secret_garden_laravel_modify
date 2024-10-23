@@ -5,8 +5,8 @@
 
 <header>
     <div class="colorlib-navbar-brand">
-         <a class="colorlib-logo" style="color: #00cc44;" href="/">
-            <img src="/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br>
+         <a class="colorlib-logo" style="color: #00cc44;" href="{{ env('APP_URL') }}">
+            <img src="{{ env('APP_URL') }}/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br>
             <span class="ml-5 pl-3">
                 @if (!$isLogin)
                     訪客您好，歡迎來到{{ $shopSubTitle }}
@@ -22,7 +22,7 @@
 <!--店家主題投影片 -->
 <section class="home-slider owl-carousel">
     @foreach ($homeBannerContext as $context)
-        <div class="slider-item" style="background-image: url('/assets/images/{{ $context['homeBannerPicName'] }}');" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}">
+        <div class="slider-item" style="background-image: url('{{ env('APP_URL') }}/assets/images/{{ $context['homeBannerPicName'] }}');" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-start align-items-center" data-scrollax-parent="true">
@@ -37,7 +37,7 @@
                             </div>
                             @endforeach
                         </div>
-                        <p><a href="/product/1" class="btn btn-primary px-4 py-3">{{ $context['linkPathDesc1'] }}</a> <a href="/product" class="btn btn-primary btn-outline-primary px-4 py-3">{{ $context['linkPathDesc2'] }}</a></p>
+                        <p><a href="{{ env('APP_URL') }}/product/1" class="btn btn-primary px-4 py-3">{{ $context['linkPathDesc1'] }}</a> <a href="{{ env('APP_URL') }}/product/1" class="btn btn-primary btn-outline-primary px-4 py-3">{{ $context['linkPathDesc2'] }}</a></p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
 <section class="ftco-section-2">
     <div class="container-fluid">
         <div class="section-2-blocks-wrapper d-flex row no-gutters">
-            <div class="img col-md-6 ftco-animate" style="background-image: url('/assets/images/shopping.jpg');" alt="{{ $shopMainTitle }}-{{ $mainSection1Data[0] }}" title="{{ $shopMainTitle }}-{{ $mainSection1Data[0] }}">
+            <div class="img col-md-6 ftco-animate" style="background-image: url('{{ env('APP_URL') }}/assets/images/shopping.jpg');" alt="{{ $shopMainTitle }}-{{ $mainSection1Data[0] }}" title="{{ $shopMainTitle }}-{{ $mainSection1Data[0] }}">
             </div>
             <div class="text col-md-6 ftco-animate">
                 <div class="text-inner align-self-start">
@@ -65,12 +65,12 @@
                     </ul>
                     <div class="row">
                         <div class="col-md-7 ftco-animate">
-                            <div class="img-2 d-flex justify-content-center align-items-center" style="background-image: url('/assets/images/bg_6.jpg');" alt="{{ $shopMainTitle }}-{{ $mainSection1Data[1] }}" title="{{ $shopMainTitle }}-{{ $mainSection1Data[1] }}">
-                                <a href="/assets/videos/introduce.mp4" class="button popup-vimeo"><span class="ion-ios-play"></span></a>
+                            <div class="img-2 d-flex justify-content-center align-items-center" style="background-image: url('{{ env('APP_URL') }}/assets/images/bg_6.jpg');" alt="{{ $shopMainTitle }}-{{ $mainSection1Data[1] }}" title="{{ $shopMainTitle }}-{{ $mainSection1Data[1] }}">
+                                <a href="{{ env('APP_URL') }}/assets/videos/introduce.mp4" class="button popup-vimeo"><span class="ion-ios-play"></span></a>
                             </div>
                         </div>
                         <div class="col-md-4 d-md-flex align-items-center">
-                            <h3 class="watchvideo-heading"><a href="/assets/videos/introduce.mp4"><span class="ion-ios-play"></span>{{ $mainSection1Data[2] }}</a></h3> <!--首頁區塊1: 影片介紹標題-->
+                            <h3 class="watchvideo-heading"><a href="{{ env('APP_URL') }}/assets/videos/introduce.mp4"><span class="ion-ios-play"></span>{{ $mainSection1Data[2] }}</a></h3> <!--首頁區塊1: 影片介紹標題-->
                         </div>
                     </div>
                 </div>
@@ -92,12 +92,12 @@
             <!--商品展示項目 -->
             @foreach ($productCollection as $index1 => $item)
                 <div class="col-md-3 model-entry ftco-animate">
-                    <div class="model-img" style="background-image: url(/assets/images/{{ $item['img_name'] }});" alt="{{ $shopMainTitle }}-{{ $item['type'] }}" title="{{ $shopMainTitle }}-{{ $item['type'] }}">
+                    <div class="model-img" style="background-image: url({{ env('APP_URL') }}/assets/images/{{ $item['img_name'] }});" alt="{{ $shopMainTitle }}-{{ $item['type'] }}" title="{{ $shopMainTitle }}-{{ $item['type'] }}">
                         <div class="name">
-                            <h3><a href="product/{{ $index1 }}">{{ $item['type'] }}</a></h3>
+                            <h3><a href="{{ env('APP_URL') }}/product/{{ $index1 }}">{{ $item['type'] }}</a></h3>
                         </div>
                         <div class="text">
-                            <h3><a href="product/{{ $index1 }}">{{ $item['type'] }}</a></h3>
+                            <h3><a href="{{ env('APP_URL') }}/product/{{ $index1 }}">{{ $item['type'] }}</a></h3>
                             <div class="d-flex models-info">
                                 @foreach ($item['brand_name'] as $index2 => $name)
                                     <div class="pr-md-3">
@@ -112,7 +112,7 @@
             @endforeach
             <div class="col-md-3 d-flex justify-content-center align-items-center bg-light ftco-animate">
                 <div class="btn-view">
-                    <p><a href="/product/1">{{ $collectionLinkage }}</a></p>
+                    <p><a href="{{ env('APP_URL') }}/product/1">{{ $collectionLinkage }}</a></p>
                 </div>
             </div>
             <!--商品展示項目 -->
@@ -120,7 +120,7 @@
     </div>
 </section>
 
-<section class="ftco-section testimony-section img" style="background-image: url(/assets/images/client-saying.jpg);" alt="{{ $shopMainTitle }}-{{ $section3Title }}" title="{{ $shopMainTitle }}-{{ $section3Title }}">
+<section class="ftco-section testimony-section img" style="background-image: url({{ env('APP_URL') }}/assets/images/client-saying.jpg);" alt="{{ $shopMainTitle }}-{{ $section3Title }}" title="{{ $shopMainTitle }}-{{ $section3Title }}">
     <div class="overlay"></div>
     <div class="container">
         <div class="row justify-content-center">
@@ -135,7 +135,7 @@
                     @foreach ($mainSection3Data['customerFeedback'] as $index => $item)
                         <div class="item">
                             <div class="testimony-wrap text-center">
-                                <div class="user-img mb-5" style="background-image: url(/assets/images/person_{{ $index + 1}}.jpg)">
+                                <div class="user-img mb-5" style="background-image: url({{ env('APP_URL') }}/assets/images/person_{{ $index + 1}}.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -157,7 +157,7 @@
 <section class="ftco-section-2">
     <div class="container-fluid">
         <div class="section-2-blocks-wrapper d-flex row no-gutters">
-            <div class="img col-md-6 ftco-animate" style="background-image: url('/assets/images/bg_6.jpg');" alt="{{ $shopMainTitle }}-{{ $section4Title }}" title="{{ $shopMainTitle }}-{{ $section4Title }}">
+            <div class="img col-md-6 ftco-animate" style="background-image: url('{{ env('APP_URL') }}/assets/images/bg_6.jpg');" alt="{{ $shopMainTitle }}-{{ $section4Title }}" title="{{ $shopMainTitle }}-{{ $section4Title }}">
             </div>
             <div class="text col-md-6 ftco-animate">
                 <div class="text-inner align-self-start">
@@ -188,7 +188,7 @@
                     </p>
                 @endforeach
                 <p class="btn-view mt-5">
-                    <a href="/news">
+                    <a href="{{ env('APP_URL') }}/news/1">
                         {{ $section5Linkage }}                <!--首頁區塊5: 最新消息連結-->
                     </a>
                 </p>
@@ -196,8 +196,8 @@
             @foreach ($shopNewsBasicData as $index => $news)
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                        <a href="/news/{{ $index }}" class="block-20 radius-img" 
-                        style="background-image: url('/assets/images/{{ $news['picture_file_name'] }}');" 
+                        <a href="{{ env('APP_URL') }}/news/{{ $index }}" class="block-20 radius-img" 
+                        style="background-image: url('{{ env('APP_URL') }}/assets/images/{{ $news['picture_file_name'] }}');" 
                         alt="{{ $shopMainTitle }}-{{ $news['news_main_title'] }}" 
                         title="{{ $shopMainTitle }}-{{ $news['news_main_title'] }}">
                         </a>
@@ -328,105 +328,4 @@
         </div>
     </div>
 </section>
-
-{{-- <div class="container">
-    @if (!$isLogin)
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('準備登入') }}</div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子信箱') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="請輸入會員信箱...">
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="請輸入會員密碼...">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('記住我') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('登入') }}
-                                    </button>
-
-                                    @if (Route::has('register'))
-                                        <button type="button" class="btn btn-primary ml-3" id="btn_register">
-                                            {{ __('註冊') }}
-                                        </button>
-                                    @endif
-
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('忘記您的密碼?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @else
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        {{ __('歡迎' . $bannerSubTitle[1] . '的登入!') }}
-                        <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    @endif
-</div> --}}
-
 @endsection

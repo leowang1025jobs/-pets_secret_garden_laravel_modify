@@ -395,11 +395,11 @@
                          '聯絡秘密花園'
                     ],
                     'linkagePath' => [
-                         1 => '/',
-                         '/shop/about',
-                         '/product',
-                         '/news',
-                         '/shop/contact'
+                         1 => env('APP_URL').'/',
+                         env('APP_URL').'/shop/about',
+                         env('APP_URL').'/product',
+                         env('APP_URL').'/news',
+                         env('APP_URL').'/shop/contact'
                     ]
                ];
 

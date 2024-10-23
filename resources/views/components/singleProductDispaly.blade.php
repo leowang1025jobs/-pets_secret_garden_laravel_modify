@@ -1,6 +1,6 @@
 <!--Continue To Modified The Context-->
 <div class="col-md-3 model-entry ftco-animate">
-     <div class="model-img" style="background-image: url('/assets/images/image_3.jpg');" alt="秘密花園-手作美味零食" title="秘密花園-手作美味零食">
+     <div class="model-img" style="background-image: url('{{ env('APP_URL') }}/assets/images/image_3.jpg');" alt="秘密花園-手作美味零食" title="秘密花園-手作美味零食">
          <div class="name">
              <h3><a href="product-detail.html">手作美味零食</a></h3>
          </div>

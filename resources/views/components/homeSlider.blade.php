@@ -1,5 +1,5 @@
 <!--Continue To Modified The Context-->
-<div class="slider-item" style="background-image: url('/assets/images/bg_0.jpg');" alt="秘密花園-首頁" title="秘密花園-首頁">
+<div class="slider-item" style="background-image: url('{{ env('APP_URL') }}/assets/images/bg_0.jpg');" alt="秘密花園-首頁" title="秘密花園-首頁">
      <div class="overlay"></div>
      <div class="container">
          <div class="row slider-text justify-content-start align-items-center" data-scrollax-parent="true">

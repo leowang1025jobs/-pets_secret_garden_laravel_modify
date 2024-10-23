@@ -3,19 +3,19 @@
 @section('main-display')
 <header>
      <div class="colorlib-navbar-brand">
-          <a class="colorlib-logo" style="color: #00cc44;" href="/"><img src="/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br><span class="ml-5 pl-3">{{ $shopSubTitle }}</span></a>
+          <a class="colorlib-logo" style="color: #00cc44;" href="{{ env('APP_URL') }}"><img src="{{ env('APP_URL') }}/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br><span class="ml-5 pl-3">{{ $shopSubTitle }}</span></a>
      </div>
      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 </header>
 
-<section class="hero-wrap" style="background-image: url(/assets/images/other_banner_bg.jpg);" data-stellar-background-ratio="0.5" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}">
+<section class="hero-wrap" style="background-image: url({{ env('APP_URL') }}/assets/images/other_banner_bg.jpg);" data-stellar-background-ratio="0.5" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}">
      <div class="overlay"></div>
      <div class="container">
          <div class="row no-gutters text align-items-end justify-content-center" data-scrollax-parent="true">
              <div class="col-md-8 ftco-animate text-center">
                  <p class="breadcrumbs">
                     <span class="mr-2">
-                        <a href="/">{{ $bannerSubTitle[0] }}</a> <!--回首頁-->
+                        <a href="{{ env('APP_URL') }}">{{ $bannerSubTitle[0] }}</a> <!--回首頁-->
                     </span>
                     <span>{{ $bannerSubTitle[1] }}</span></p> <!--聯絡秘密花園-->
                  <h1 class="mb-5 bread">{{ $bannerMainTitle }}</h1> <!--問題詢問-->

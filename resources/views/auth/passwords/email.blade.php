@@ -4,7 +4,7 @@
 @section('main-display')
 <header>
     <div class="colorlib-navbar-brand">
-         <a class="colorlib-logo" style="color: #00cc44;" href="/"><img src="/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br><span class="ml-5 pl-3">{{ $shopSubTitle }}</span></a>
+         <a class="colorlib-logo" style="color: #00cc44;" href="{{ env('APP_URL') }}"><img src="{{ env('APP_URL') }}/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br><span class="ml-5 pl-3">{{ $shopSubTitle }}</span></a>
     </div>
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 </header>
@@ -12,7 +12,7 @@
 <!--店家主題投影片 -->
 <section class="home-slider owl-carousel">
     @foreach ($homeBannerContext as $context)
-        <div class="slider-item" style="background-image: url('/assets/images/{{ $context['homeBannerPicName'] }}');" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}">
+        <div class="slider-item" style="background-image: url('{{ env('APP_URL') }}/assets/images/{{ $context['homeBannerPicName'] }}');" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-start align-items-center" data-scrollax-parent="true">
@@ -27,7 +27,7 @@
                             </div>
                             @endforeach
                         </div>
-                        <p><a href="/product/1" class="btn btn-primary px-4 py-3">{{ $context['linkPathDesc1'] }}</a> <a href="/product" class="btn btn-primary btn-outline-primary px-4 py-3">{{ $context['linkPathDesc2'] }}</a></p>
+                        <p><a href="{{ env('APP_URL') }}/product/1" class="btn btn-primary px-4 py-3">{{ $context['linkPathDesc1'] }}</a> <a href="{{ env('APP_URL') }}/product/1" class="btn btn-primary btn-outline-primary px-4 py-3">{{ $context['linkPathDesc2'] }}</a></p>
                     </div>
                 </div>
             </div>

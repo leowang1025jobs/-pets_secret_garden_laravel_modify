@@ -6,28 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="{{ $shopBasicDescription }}">
         <meta name="keywords" content="{{ $shopBasicKeywords }}">
-    
-        <link rel="icon" href="/assets/images/icon.png" type="image/x-icon">
+        <link rel="icon" href="{{ env('APP_URL') }}/assets/images/icon.png" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/animate.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/open-iconic-bootstrap.min.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/animate.css">
     
-        <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/magnific-popup.css">
     
-        <link rel="stylesheet" href="/assets/css/aos.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/aos.css">
     
-        <link rel="stylesheet" href="/assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/ionicons.min.css">
     
-        <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/jquery.timepicker.css">
     
     
-        <link rel="stylesheet" href="/assets/css/flaticon.css">
-        <link rel="stylesheet" href="/assets/css/icomoon.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/flaticon.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/icomoon.css">
+        <link rel="stylesheet" href="{{ env('APP_URL') }}/assets/css/style.css">
     </head>
     <body>
         <div class="page">
@@ -35,7 +34,7 @@
             <nav id="colorlib-main-nav" role="navigation" class="mt-5">
                 <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
                 <div class="js-fullheight colorlib-table">
-                    <div class="img" style="background-image: url(/assets/images/bg_1.jpg);" alt="{{ $shopMainTitle }}-{{ $homePageName }}" title="{{ $shopMainTitle }}-{{ $homePageName }}"></div>
+                    <div class="img" style="background-image: url({{ env('APP_URL') }}/assets/images/bg_1.jpg);" alt="{{ $shopMainTitle }}-{{ $homePageName }}" title="{{ $shopMainTitle }}-{{ $homePageName }}"></div>
                     <div class="colorlib-table-cell js-fullheight">
                         <div class="row no-gutters">
                             <div class="col-md-12 text-center">
@@ -43,8 +42,8 @@
                                     <div class="row">
                                         <div class="col-sm-5 col-md-4"></div>
                                         <div class="col-sm-7 col-md-8">
-                                            <a href="/" class="logo text-left">
-                                                <img src="/assets/images/icon.png" alt="{{ $shopMainTitle }}-{{ $homePageName }}" title="{{ $shopMainTitle }}-{{ $homePageName }}" class="mr-3 mb-2" style="max-width: 6%;">{{ $shopMainTitle }}<br>
+                                            <a href="{{ env('APP_URL') }}" class="logo text-left">
+                                                <img src="{{ env('APP_URL') }}/assets/images/icon.png" alt="{{ $shopMainTitle }}-{{ $homePageName }}" title="{{ $shopMainTitle }}-{{ $homePageName }}" class="mr-3 mb-2" style="max-width: 6%;">{{ $shopMainTitle }}<br>
                                                 <span class="ml-5">{{ $shopSubTitle }}</span>
                                             </a>
                                         </div>
@@ -72,7 +71,7 @@
                 <section class="ftco-quote ftco-animate">
                     <div class="container mt-5">
                         <div class="row d-flex">
-                            <div class="col-md-9 req-quote py-5 align-items-center img radius-img" style="background-image: url(/assets/images/join_us.jpg);">
+                            <div class="col-md-9 req-quote py-5 align-items-center img radius-img" style="background-image: url({{ env('APP_URL') }}/assets/images/join_us.jpg);">
                                 <h3 class="ml-md-3 " style="color: #00cc44; " 
                                 alt="{{ $shopMainTitle }}-{{ $block1Data['main_title'] }}" 
                                 title="{{ $shopMainTitle }}-{{ $block1Data['main_title'] }}">
@@ -108,18 +107,18 @@
                                     <h2 class="ftco-heading-2">{{ $footerData[1]['item_title'] }}</h2>
                                     @foreach ($footerData[1]['item_data'] as $index => $news)
                                     <div class="block-21 mb-4 d-flex ">
-                                        <a class="blog-img mr-4 radius-img" style="background-image: url(/assets/images/{{ $news['photo_name'] }});" 
+                                        <a class="blog-img mr-4 radius-img" style="background-image: url({{ env('APP_URL') }}/assets/images/{{ $news['photo_name'] }});" 
                                             alt="{{ $shopMainTitle }}-{{ $news['sort'] }}" 
                                             title="{{ $shopMainTitle }}-{{ $news['sort'] }}">
                                         </a>
                                         <div class="text">
                                             <h3 class="heading">
-                                                <a href="/news/{{ $index }}">{!! $news['title'] !!}</a> <!--消息文章: 標題-->
+                                                <a href="{{ env('APP_URL') }}/news/{{ $index }}">{!! $news['title'] !!}</a> <!--消息文章: 標題-->
                                             </h3>
                                             <div class="meta"> 
-                                                <div><a href="/news/{{ $index }}"><span class="icon-calendar "></span> {{ $news['date']}} </a></div> <!--消息文章: 建立/更新時間-->
-                                                <div><a href="/news/{{ $index }}"><span class="icon-person "></span> {{ $news['auth']}} </a></div> <!--消息文章: 建立人-->
-                                                <div><a href="/news/{{ $index }}"><span class="icon-chat "></span> {{ $news['msg_qty']}} </a></div> <!--消息文章: 回覆筆數-->
+                                                <div><a href="{{ env('APP_URL') }}/news/{{ $index }}"><span class="icon-calendar "></span> {{ $news['date']}} </a></div> <!--消息文章: 建立/更新時間-->
+                                                <div><a href="{{ env('APP_URL') }}/news/{{ $index }}"><span class="icon-person "></span> {{ $news['auth']}} </a></div> <!--消息文章: 建立人-->
+                                                <div><a href="{{ env('APP_URL') }}/news/{{ $index }}"><span class="icon-chat "></span> {{ $news['msg_qty']}} </a></div> <!--消息文章: 回覆筆數-->
                                             </div>
                                         </div>
                                     </div>
@@ -217,28 +216,29 @@
             </div>
             <!-- Modal 結束-->
         </div>
+        <input type="hidden" value="{{ env('APP_URL') }}" id="app_url"/>
 
-        <script src="/assets/js/jquery.min.js "></script>
-        <script src="/assets/js/jquery-migrate-3.0.1.min.js "></script>
-        <script src="/assets/js/popper.min.js "></script>
-        <script src="/assets/js/bootstrap.min.js "></script>
-        <script src="/assets/js/jquery.easing.1.3.js "></script>
-        <script src="/assets/js/jquery.waypoints.min.js "></script>
-        <script src="/assets/js/jquery.stellar.min.js "></script>
-        <script src="/assets/js/owl.carousel.min.js "></script>
-        <script src="/assets/js/jquery.magnific-popup.min.js "></script>
-        <script src="/assets/js/aos.js "></script>
-        <script src="/assets/js/jquery.animateNumber.min.js "></script>
-        <script src="/assets/js/scrollax.min.js "></script>
-        <script src="/assets/js/bootstrap-datepicker.js "></script>
-        <script src="/assets/js/jquery.timepicker.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery-migrate-3.0.1.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/popper.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/bootstrap.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.easing.1.3.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.waypoints.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.stellar.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/owl.carousel.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.magnific-popup.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/aos.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.animateNumber.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/scrollax.min.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/bootstrap-datepicker.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/jquery.timepicker.min.js "></script>
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false "></script>
-        <script src="/assets/js/google-map.js "></script> -->
-        <script src="/assets/js/main.js "></script>
+        <script src="{{ env('APP_URL') }}/assets/js/google-map.js "></script> -->
+        <script src="{{ env('APP_URL') }}/assets/js/main.js "></script>
         <script type="text/javascript">
             $(function(){
                 $("#btn_register").on("click", function () {
-                    location.href = "/register";
+                    location.href = $("#app_url").val()+"/register";
                 });
                 $("#btn_remember").on("click", function () {
                     $("#remember").attr("checked", true);

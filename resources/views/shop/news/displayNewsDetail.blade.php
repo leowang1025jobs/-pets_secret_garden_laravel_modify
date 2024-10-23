@@ -3,22 +3,22 @@
 @section('main-display')
 <header>
      <div class="colorlib-navbar-brand">
-          <a class="colorlib-logo" style="color: #00cc44;" href="/"><img src="/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br><span class="ml-5 pl-3">{{ $shopSubTitle }}</span></a>
+          <a class="colorlib-logo" style="color: #00cc44;" href="{{ env('APP_URL') }}"><img src="{{ env('APP_URL') }}/assets/images/icon.png" width="6%" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">{{ $shopMainTitle }}<br><span class="ml-5 pl-3">{{ $shopSubTitle }}</span></a>
      </div>
      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 </header>
 
-<section class="hero-wrap" style="background-image: url(/assets/images/other_banner_bg.jpg);" data-stellar-background-ratio="0.5" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">
+<section class="hero-wrap" style="background-image: url({{ env('APP_URL') }}/assets/images/other_banner_bg.jpg);" data-stellar-background-ratio="0.5" alt="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" title="{{ $shopMainTitle }}-{{ $bannerMainTitle }}" class="mr-3 mb-2">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters text align-items-end justify-content-center" data-scrollax-parent="true">
             <div class="col-md-8 ftco-animate text-center">
                 <p class="breadcrumbs">
                     <span class="mr-2">
-                        <a href="/">{{ $bannerSubTitle[0] }}</a>  <!--回首頁-->
+                        <a href="{{ env('APP_URL') }}">{{ $bannerSubTitle[0] }}</a>  <!--回首頁-->
                     </span>
                     <span class="mr-2">
-                        <a href="/news">{{ $bannerSubTitle[1] }}</a></span> <!--最新花園消息-->
+                        <a href="{{ env('APP_URL') }}/news">{{ $bannerSubTitle[1] }}</a></span> <!--最新花園消息-->
                     <span>{{ $bannerSubTitle[2] }}</span> <!--消息內容-->
                 </p>
                 <h1 class="mb-5 bread">{{ $bannerMainTitle }}</h1> <!--好康爆爆-->
@@ -43,7 +43,7 @@
 
                 <div class="about-author d-flex p-5 bg-light">
                     <div class="bio align-self-md-center">
-                        <img src="/assets/images/gardener.png" alt="Image placeholder" class="img-fluid mb-4" style="width: 55%;">
+                        <img src="{{ env('APP_URL') }}/assets/images/gardener.png" alt="Image placeholder" class="img-fluid mb-4" style="width: 55%;">
                     </div>
                     <div class="desc align-self-md-center">
                         <h3>{{ $newsAuth['name'] }}</h3><!--消息文章作者: 名稱-->
@@ -59,7 +59,7 @@
                         @foreach ($newsReplyments as $replyment)
                             <li class="comment">
                                 <div class="vcard bio">
-                                    <img src="/assets/images/{{ $replyment['picture_file_name'] }}" alt="Image placeholder">
+                                    <img src="{{ env('APP_URL') }}/assets/images/{{ $replyment['picture_file_name'] }}" alt="Image placeholder">
                                 </div>
                                 <div class="comment-body">
                                     <h3>{{ $replyment['user_basic']['name'] }}</h3><!--消息文章主回覆: 回覆(使用)者顯示名稱-->
@@ -77,7 +77,7 @@
                                     @foreach ($replyment['subReplyments'] as $subReplyments)
                                         <li class="comment">
                                             <div class="vcard bio">
-                                                <img src="/assets/images/{{ $subReplyments['picture_file_name'] }}" alt="Image placeholder">
+                                                <img src="{{ env('APP_URL') }}/assets/images/{{ $subReplyments['picture_file_name'] }}" alt="Image placeholder">
                                             </div>
                                             <div class="comment-body">
                                                 <h3>{{ $subReplyments['user_basic']['name'] }}</h3><!--消息文章子回覆: 回覆(使用)者顯示名稱-->
@@ -136,18 +136,18 @@
                     <h3>{{ $footerData[1]['item_title'] }}</h3> <!--最新花園消息-->
                     @foreach ($footerData[1]['item_data'] as $index => $news)
                     <div class="block-21 mb-4 d-flex ">
-                        <a class="blog-img mr-4 radius-img" style="background-image: url(/assets/images/{{ $news['photo_name'] }});" 
+                        <a class="blog-img mr-4 radius-img" style="background-image: url({{ env('APP_URL') }}/assets/images/{{ $news['photo_name'] }});" 
                             alt="{{ $shopMainTitle }}-{{ $news['sort'] }}" 
                             title="{{ $shopMainTitle }}-{{ $news['sort'] }}">
                         </a>
                         <div class="text">
                             <h3 class="heading">
-                                <a href="/news/{{ $index }}">{!! $news['title'] !!}</a> <!--消息文章: 標題-->
+                                <a href="{{ env('APP_URL') }}/news/{{ $index }}">{!! $news['title'] !!}</a> <!--消息文章: 標題-->
                             </h3>
                             <div class="meta"> 
-                                <div><a href="/news/{{ $index }}"><span class="icon-calendar "></span> {{ $news['date']}} </a></div> <!--消息文章: 建立/更新時間-->
-                                <div><a href="/news/{{ $index }}"><span class="icon-person "></span> {{ $news['auth']}} </a></div> <!--消息文章: 建立人-->
-                                <div><a href="/news/{{ $index }}"><span class="icon-chat "></span> {{ $news['msg_qty']}} </a></div> <!--消息文章: 回覆筆數-->
+                                <div><a href="{{ env('APP_URL') }}/news/{{ $index }}"><span class="icon-calendar "></span> {{ $news['date']}} </a></div> <!--消息文章: 建立/更新時間-->
+                                <div><a href="{{ env('APP_URL') }}/news/{{ $index }}"><span class="icon-person "></span> {{ $news['auth']}} </a></div> <!--消息文章: 建立人-->
+                                <div><a href="{{ env('APP_URL') }}/news/{{ $index }}"><span class="icon-chat "></span> {{ $news['msg_qty']}} </a></div> <!--消息文章: 回覆筆數-->
                             </div>
                         </div>
                     </div>
